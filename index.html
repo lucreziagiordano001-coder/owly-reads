@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Owly Reads: scopri libri per categoria con Open Library, costruisci la tua libreria e raggiungi i tuoi obiettivi di lettura." />
+  <title>Owly Reads</title>
+  <link rel="icon" type="image/svg+xml" href="/img/owl.svg" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <script type="module" src="/js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Vai al contenuto</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="logo"><span aria-hidden="true">🦉</span> Owly Reads</h1>
+      <nav aria-label="Sezioni principali">
+        <ul class="tabs" role="tablist">
+          <li><button class="tab is-active" role="tab" id="tab-discover" aria-selected="true" aria-controls="view-discover" data-view="discover">Scopri</button></li>
+          <li><button class="tab" role="tab" id="tab-library" aria-selected="false" aria-controls="view-library" data-view="library">La mia libreria <span class="badge-count" id="library-count">0</span></button></li>
+          <li><button class="tab" role="tab" id="tab-goals" aria-selected="false" aria-controls="view-goals" data-view="goals">Obiettivi</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <!-- SCOPRI -->
+    <section id="view-discover" class="view" role="tabpanel" aria-labelledby="tab-discover">
+      <form id="search-form" class="search" role="search">
+        <label for="search-input" class="sr-only">Categoria di libri</label>
+        <div class="search-box">
+          <svg class="search-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          <input id="search-input" type="search" placeholder="Cerca una categoria, es. fantasy" autocomplete="off" required minlength="2" />
+          <button id="search-clear" class="search-clear" type="button" aria-label="Cancella" hidden>✕</button>
+        </div>
+        <button type="submit" class="btn btn-primary">Cerca</button>
+      </form>
+
+      <div class="chips-wrap">
+        <p class="chips-label" id="chips-label">Oppure esplora per categoria:</p>
+        <div id="subject-chips" class="chips" role="group" aria-labelledby="chips-label"></div>
+      </div>
+
+      <h2 id="results-title" class="section-title" tabindex="-1">Risultati</h2>
+      <div id="results" class="grid" aria-live="polite" aria-busy="false"><p class="empty">Scrivi una categoria (in inglese, per esempio <strong>fantasy</strong>) e premi Cerca.</p></div>
+      <div class="center">
+        <button id="load-more" class="btn" hidden>Carica altri libri</button>
+      </div>
+    </section>
+
+    <!-- LIBRERIA -->
+    <section id="view-library" class="view" role="tabpanel" aria-labelledby="tab-library" hidden>
+      <h2 class="section-title">La mia libreria</h2>
+      <div id="library-filters" class="chips" role="group" aria-label="Filtra per stato"></div>
+      <div id="library-list" class="grid"></div>
+    </section>
+
+    <!-- OBIETTIVI -->
+    <section id="view-goals" class="view" role="tabpanel" aria-labelledby="tab-goals" hidden>
+      <h2 class="section-title">I tuoi obiettivi di lettura</h2>
+      <div id="goals-panel"></div>
+    </section>
+  </main>
+
+  <dialog id="book-dialog" aria-labelledby="dialog-title">
+    <div id="dialog-content"></div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Progetto JavaScript Advanced · Dati forniti da <a href="https://openlibrary.org" target="_blank" rel="noopener">Open Library</a> · <a href="https://openlibrary.org/dev/docs/api/subjects" target="_blank" rel="noopener">Documentazione API</a></p>
+    </div>
+  </footer>
+</body>
+</html>
