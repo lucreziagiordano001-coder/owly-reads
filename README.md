@@ -4,7 +4,7 @@ Applicazione web che incentiva la lettura: scegli una **categoria** di libri (pe
 
 Progetto del corso **JavaScript Advanced** — sviluppato come parte del team di Owly, piattaforma SaaS per l'educazione nella scuola primaria. I dati arrivano dalle API di [Open Library](https://openlibrary.org/dev/docs/api/subjects).
 
-**👉 [LINK DEL DEPLOY, es. https://owly-reads.netlify.app](https://owly-reads.netlify.app)**
+**👉 [Prova Owly Reads online](https://owly-reads.netlify.app)**
 
 ## ✨ Funzionalità
 
