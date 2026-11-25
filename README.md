@@ -86,7 +86,7 @@ I test (Vitest, cartella `tests/`) coprono le funzioni critiche di calcolo e ges
 
 ## ☁️ Deploy
 
-Il sito è pubblicato su Netlify con le impostazioni di `netlify.toml` (comando `npm run build`, cartella `dist`). Per ripubblicarlo: collega il repository GitHub a Netlify oppure carica la cartella `dist/` dopo `npm run build`.
+Il sito è pubblicato su Netlify con le impostazioni di `netlify.toml`.
 
 ## 📝 Note di sviluppo
 
